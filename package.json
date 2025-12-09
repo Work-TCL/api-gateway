@@ -6,9 +6,9 @@
   "license": "ISC",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/server.ts",
-    "build": "tsc",
-    "start": "node build/server.js",
+    "dev": "node api.js && nodemon --exec ts-node src/server.ts",
+    "build": "node api.js && tsc",
+    "start": "node api.js && npm run build && node build/server.js",
     "clean": "rm -rf dist"
   },
   "dependencies": {
@@ -17,7 +17,8 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "http-proxy-middleware": "^3.0.3",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
