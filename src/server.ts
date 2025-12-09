@@ -9,3 +9,7 @@ app.use((req, res, next) => {
   console.log(`📩 Incoming request: ${req.method} ${req.originalUrl}`);
   next();
 });
+
+app.get("/", (req, res) => {
+  res.send("Api Gateway is running");
+});

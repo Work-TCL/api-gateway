@@ -10,6 +10,7 @@ build/
 
 # Environment variables
 .env
+.env.prod
 
 # Logs
 logs/
@@ -17,8 +18,10 @@ logs/
 
 # IDE specific files
 .idea/
-.vscode/
 
 # OS generated files
 .DS_Store
 Thumbs.db
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
