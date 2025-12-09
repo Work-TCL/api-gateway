@@ -11,9 +11,9 @@ const routesPath = path.join(__dirname, "routes");
 
 if (fs.existsSync(routesPath)) {
   fs.readdirSync(routesPath).forEach((file) => {
-    if (file.endsWith(".routes.ts")) {
+    if (file.endsWith(".routes.ts") || file.endsWith(".routes.js")) {
       const route = require(path.join(routesPath, file)).default;
-      app.use(`/api/${file.replace(".routes.ts", "")}`, route);
+      app.use(`/api/${file.replace(".routes.ts", "").replace(".routes.js", "")}`, route);
     }
   });
 } else {
